@@ -56,7 +56,7 @@
             {{#if delete}}
                 mpfield:deletePattern <{{ ../../prefix }}{{../id}}/query/delete> ;
             {{/if}}
-            {{#if values}}
+            {{#if valueSet}}
                 mpfield:valueSetPattern <{{ ../../prefix }}{{../id}}/query/values> ;
             {{/if}}
         {{/each}}
@@ -68,23 +68,23 @@
         {{#each queries }}
             {{#if insert}}
                 <{{ ../../prefix }}{{../id}}/query/insert> a sp:Query;
-                    sp:text """{{ insert }}""" .
+                    sp:text """{{{ insert }}}""" .
             {{/if}}
             {{#if select}}
                 <{{ ../../prefix }}{{../id}}/query/select> a sp:Query;
-                    sp:text """{{ select }}""" .
+                    sp:text """{{{ select }}}""" .
             {{/if}}
             {{#if ask}}
                 <{{ ../../prefix }}{{../id}}/query/ask> a sp:Query;
-                    sp:text """{{ ask }}""" .
+                    sp:text """{{{ ask }}}""" .
             {{/if}}
             {{#if delete}}
                 <{{ ../../prefix }}{{../id}}/query/delete> a sp:Query;
-                    sp:text """{{ delete }}""" .
+                    sp:text """{{{ delete }}}""" .
             {{/if}}
-            {{#if values}}
+            {{#if valueSet}}
                 <{{ ../../prefix }}{{../id}}/query/values> a sp:Query;
-                    sp:text """{{ values }}""" .
+                    sp:text """{{{ valueSet }}}""" .
             {{/if}}
         {{/each}}
     

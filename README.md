@@ -32,6 +32,7 @@ fields:
         - delete: '{delete query}'
         - insert: '{insert query}'
         - select: '{select query}'
+        - valueSet: '{value set query}'
           
     - ...
 ```
