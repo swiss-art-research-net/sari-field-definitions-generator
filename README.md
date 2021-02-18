@@ -2,11 +2,6 @@
 
 A generator for Metaphacts/ResearchSpace field definitions
 
-## Requirements
-
-pybars3
-yaml
-
 ## Installations
 
 install using pip

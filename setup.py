@@ -4,10 +4,11 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
     name="sari-field-definitions-generator", # Replace with your own username
-    version="0.0.2",
+    version="0.1.0",
     author="Florian Kräutli",
     author_email="florian.kraeutli@uzh.ch",
     description="A generator for Field Definitions for ResearchSpace and Metaphacts",
+    install_requires=['pybars3','yaml'],
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/swiss-art-research-net/sari-field-definitions-generator.git",
