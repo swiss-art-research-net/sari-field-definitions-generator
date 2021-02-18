@@ -21,7 +21,6 @@ Define field definitions as a Python dict or in an external yaml file:
 
 ```yaml
 prefix: http://rs.swissartresearch.net/instances/fields/
-container: http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer
 
 fields:
 
@@ -48,9 +47,17 @@ Then, load and compile it using the generator
 from sariFieldDefinitionsGenerator import generator
 
 inputFile = './fieldDefinitions.yml'
+outputFile = '../ldp/assets/fieldDefinitions.trig'
+
 model = generator.loadSourceFromFile(inputFile)
 
 output = generator.generate(model, generator.METAPHACTS)
 
-print(output)
+with open(outputFile, 'w') as f:
+    f.write(output)
 ```
+
+Available templates are:
+- `generator.METAPHACTS` for Metaphacts Open Source Platform
+- `generator.RESEARCHSPACE` for ResearchSpace
+- `generator.UNIVERSAL` for both platforms
