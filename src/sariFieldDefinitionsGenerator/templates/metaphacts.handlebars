@@ -44,6 +44,9 @@
             mpfield:range {{ range }} ;
         {{/if}}
         {{#each queries }}
+            {{#if autosuggestion}}
+                mpfield:autosuggestionPattern <{{ ../../prefix }}{{../id}}/query/autosuggestion> ;
+            {{/if}}
             {{#if insert}}
                 mpfield:insertPattern <{{ ../../prefix }}{{../id}}/query/insert> ;
             {{/if}}
@@ -66,6 +69,10 @@
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
         {{#each queries }}
+            {{#if autosuggestion}}
+                <{{ ../../prefix }}{{../id}}/query/autosuggestion> a sp:Query;
+                    sp:text """{{{ insert }}}""" .
+            {{/if}}
             {{#if insert}}
                 <{{ ../../prefix }}{{../id}}/query/insert> a sp:Query;
                     sp:text """{{{ insert }}}""" .
