@@ -87,7 +87,7 @@
         {{#each queries }}
             {{#if autosuggestion}}
                 <{{ ../../prefix }}{{../id}}/query/autosuggestion> a sp:Query;
-                    sp:text """{{{ insert }}}""" .
+                    sp:text """{{{ autosuggestion }}}""" .
             {{/if}}
             {{#if insert}}
                 <{{ ../../prefix }}{{../id}}/query/insert> a sp:Query;
