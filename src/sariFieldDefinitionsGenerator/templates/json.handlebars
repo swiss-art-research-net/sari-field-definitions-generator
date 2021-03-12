@@ -26,22 +26,22 @@
         {{/if}}
         {{#each queries }}
             {{#if autosuggestion}}
-                "autosuggestionPattern" : "{{ autosuggestion }}",
+                "autosuggestionPattern" : "{{{ autosuggestion }}}",
             {{/if}}
             {{#if insert}}
-                "insertPattern" : "{{ insert }}",
+                "insertPattern" : "{{{ insert }}}",
             {{/if}}
             {{#if select}}
-                "selectPattern" : "{{ select }}",
+                "selectPattern" : "{{{ select }}}",
             {{/if}}
             {{#if ask}}
-                "askPattern" : "{{ ask }}",
+                "askPattern" : "{{{ ask }}}",
             {{/if}}
             {{#if delete}}
-                "deletePattern" : "{{ delete }}",
+                "deletePattern" : "{{{ delete }}}",
             {{/if}}
             {{#if valueSet}}
-                "valueSetPattern" : "{{ valueSet }}",
+                "valueSetPattern" : "{{{ valueSet }}}",
             {{/if}}
         {{/each}}
         "iri" : "{{ ../prefix }}{{ id }}"

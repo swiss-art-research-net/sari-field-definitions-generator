@@ -29,6 +29,8 @@ def generate(source, output=UNIVERSAL):
     with templateFile.open() as f:
         templateSource = f.read()
 
+    # TODO: Escape quotes when generating JSON
+
     compiler = Compiler()
     template = compiler.compile(templateSource)
     try:
