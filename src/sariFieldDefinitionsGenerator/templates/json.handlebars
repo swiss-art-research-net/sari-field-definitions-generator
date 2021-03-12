@@ -1,0 +1,51 @@
+[
+ {{#each fields}}
+    {
+        "id" : "{{ id }}",
+
+        {{#if label}}
+            "label": "{{ label }}",
+        {{/if}}
+        {{#if description}}
+            "description" : "{{ description }}",
+        {{/if}}
+        {{#if minOccurs}} 
+            "minOccurs" : "{{ minOccurs }}",
+        {{/if}}
+        {{#if maxOccurs}}
+            "maxOccurs" : "{{ maxOccurs }}",
+        {{/if}}
+        {{#if datatype}}
+            "xsdDatatype" : "{{ datatype }}",
+        {{/if}}
+        {{#if domain}}
+            "domain" : "{{ domain }}",
+        {{/if}}
+        {{#if range}}
+            "range" : "{{ range }}",
+        {{/if}}
+        {{#each queries }}
+            {{#if autosuggestion}}
+                "autosuggestionPattern" : "{{ autosuggestion }}",
+            {{/if}}
+            {{#if insert}}
+                "insertPattern" : "{{ insert }}",
+            {{/if}}
+            {{#if select}}
+                "selectPattern" : "{{ select }}",
+            {{/if}}
+            {{#if ask}}
+                "askPattern" : "{{ ask }}",
+            {{/if}}
+            {{#if delete}}
+                "deletePattern" : "{{ delete }}",
+            {{/if}}
+            {{#if valueSet}}
+                "valueSetPattern" : "{{ valueSet }}",
+            {{/if}}
+        {{/each}}
+        "iri" : "{{ ../prefix }}{{ id }}"
+    }{{#if @last}}{{else}}{{#if @first}}{{#if @last}}{{else}},{{/if}}{{else}},{{/if}}{{/if}}
+
+ {{/each}}
+]

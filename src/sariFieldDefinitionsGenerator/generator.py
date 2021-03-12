@@ -5,6 +5,7 @@ from pybars import Compiler
 UNIVERSAL = 0
 RESEARCHSPACE = 1
 METAPHACTS = 2
+JSON = 3
 
 def loadSourceFromFile(file):
     try:
@@ -20,6 +21,8 @@ def generate(source, output=UNIVERSAL):
         templateFile = Path(__file__).parent / './templates/metaphacts.handlebars'
     elif output == RESEARCHSPACE:
         templateFile = Path(__file__).parent / './templates/researchspace.handlebars'
+    elif output == JSON:
+        templateFile = Path(__file__).parent / './templates/json.handlebars'
     else:
         templateFile = Path(__file__).parent / './templates/universal.handlebars'
     
