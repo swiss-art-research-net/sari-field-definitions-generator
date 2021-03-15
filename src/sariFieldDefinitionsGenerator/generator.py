@@ -30,6 +30,14 @@ def generate(source, output=UNIVERSAL):
         templateSource = f.read()
 
     # TODO: Escape quotes when generating JSON
+    if output == JSON:
+        for i in range(len(source['fields'])):
+            if 'queries' in source['fields'][i]:
+                for queryIndex, query in enumerate(source['fields'][i]['queries']):
+                    for queryType in query.keys():
+                        escapedQuery = source['fields'][i]['queries'][queryIndex][queryType].replace('"','\\"')
+                        source['fields'][i]['queries'][queryIndex][queryType] = escapedQuery
+
 
     compiler = Compiler()
     template = compiler.compile(templateSource)
