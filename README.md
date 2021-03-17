@@ -57,3 +57,4 @@ Available templates are:
 - `generator.METAPHACTS` for Metaphacts Open Source Platform
 - `generator.RESEARCHSPACE` for ResearchSpace
 - `generator.UNIVERSAL` for both platforms
+- `generator.JSON` for a JSON representation
