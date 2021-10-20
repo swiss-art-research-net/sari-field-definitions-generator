@@ -7,7 +7,7 @@ A generator for Metaphacts/ResearchSpace field definitions
 install using pip
 
 ```sh
-pip install sariFieldDefinitionsGenerator
+pip install sari-field-definitions-generator
 ```
 
 ## Usage
