@@ -27,6 +27,15 @@
         {{#if range}}
             "range" : "{{ range }}",
         {{/if}}
+        {{#if treePatterns}}
+            "treePatterns": {
+                "type": "{{ treePatterns.type }}",
+                "rootsQuery": "{{{ treePatterns.rootsQuery }}}",
+                "childrenQuery": "{{{ treePatterns.childrenQuery }}}",
+                "parentsQuery": "{{{ treePatterns.parentsQuery }}}",
+                "searchQuery": "{{{ treePatterns.searchQuery }}}"
+            },
+        {{/if}}
         {{#each queries }}
             {{#if autosuggestion}}
                 "autosuggestionPattern" : "{{{ autosuggestion }}}",
