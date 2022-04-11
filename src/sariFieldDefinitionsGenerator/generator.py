@@ -6,6 +6,7 @@ UNIVERSAL = 0
 RESEARCHSPACE = 1
 METAPHACTS = 2
 JSON = 3
+INLINE = 4
 
 def loadSourceFromFile(file):
     try:
@@ -23,6 +24,8 @@ def generate(source, output=UNIVERSAL):
         templateFile = Path(__file__).parent / './templates/researchspace.handlebars'
     elif output == JSON:
         templateFile = Path(__file__).parent / './templates/json.handlebars'
+    elif output == INLINE:
+        templateFile = Path(__file__).parent / './templates/inline.handlebars'
     else:
         templateFile = Path(__file__).parent / './templates/universal.handlebars'
     

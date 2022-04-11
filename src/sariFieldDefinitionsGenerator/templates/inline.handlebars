@@ -1,5 +1,6 @@
-[
+
  {{#each fields}}
+ [[#*inline "{{ id }}"]]
     {
         "id" : "{{ id }}",
 
@@ -71,7 +72,7 @@
             {{/if}}
         {{/each}}
         "iri" : "{{ ../prefix }}{{ id }}"
-    }{{#if @last}}{{else}}{{#if @first}}{{#if @last}}{{else}},{{/if}}{{else}},{{/if}}{{/if}}
+    }
+[[/inline]]
 
  {{/each}}
-]
