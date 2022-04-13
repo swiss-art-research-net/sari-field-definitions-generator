@@ -33,13 +33,17 @@ def generate(source, output=UNIVERSAL):
         templateSource = f.read()
 
     # TODO: Escape quotes when generating JSON
-    if output == JSON:
+    if output == JSON or output == INLINE:
         for i in range(len(source['fields'])):
             if 'queries' in source['fields'][i]:
                 for queryIndex, query in enumerate(source['fields'][i]['queries']):
                     for queryType in query.keys():
                         escapedQuery = source['fields'][i]['queries'][queryIndex][queryType].replace('"','\\"')
                         source['fields'][i]['queries'][queryIndex][queryType] = escapedQuery
+            if 'treePatterns' in source['fields'][i]:
+                for key, value in source['fields'][i]['treePatterns'].items():
+                    escapedValue = value.replace('"','\\"')
+                    source['fields'][i]['treePatterns'][key] = escapedValue
 
 
     compiler = Compiler()

@@ -31,6 +31,7 @@
             "treePatterns": {
                 "type": "{{ treePatterns.type }}",
                 {{#if treePatterns.rootsQuery}}
+                {{#if treePatterns.rootsQuery}}
                 "rootsQuery": "{{{ treePatterns.rootsQuery }}}",
                 {{/if}}
                 {{#if treePatterns.childrenQuery}}
@@ -40,13 +41,16 @@
                 "parentsQuery": "{{{ treePatterns.parentsQuery }}}",
                 {{/if}}
                 {{#if treePatterns.searchQuery}}
-                "searchQuery": "{{{ treePatterns.searchQuery }}}",
+                "searchQuery": "{{{ treePatterns.searchQuery }}}"
                 {{/if}}
+                {{/if}}
+                {{#if treePatterns.schemePattern}}
                 {{#if treePatterns.schemePattern}}
                 "schemePattern": "{{{ treePatterns.schemePattern }}}",
                 {{/if}}
                 {{#if treePatterns.relationPattern}}
                 "relationPattern": "{{{ treePatterns.relationPattern }}}"
+                {{/if}}
                 {{/if}}
             },
         {{/if}}
