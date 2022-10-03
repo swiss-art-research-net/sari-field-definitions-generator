@@ -1,3 +1,4 @@
+import copy
 import yaml
 from pathlib import Path
 from pybars import Compiler
@@ -32,24 +33,24 @@ def generate(source, output=UNIVERSAL):
     with templateFile.open() as f:
         templateSource = f.read()
 
-    # TODO: Escape quotes when generating JSON
+    processedSource = copy.deepcopy(source)
     if output == JSON or output == INLINE:
         for i in range(len(source['fields'])):
             if 'queries' in source['fields'][i]:
                 for queryIndex, query in enumerate(source['fields'][i]['queries']):
                     for queryType in query.keys():
                         escapedQuery = source['fields'][i]['queries'][queryIndex][queryType].replace('"','\\"')
-                        source['fields'][i]['queries'][queryIndex][queryType] = escapedQuery
+                        processedSource['fields'][i]['queries'][queryIndex][queryType] = escapedQuery
             if 'treePatterns' in source['fields'][i]:
                 for key, value in source['fields'][i]['treePatterns'].items():
                     escapedValue = value.replace('"','\\"')
-                    source['fields'][i]['treePatterns'][key] = escapedValue
+                    processedSource['fields'][i]['treePatterns'][key] = escapedValue
 
 
     compiler = Compiler()
     template = compiler.compile(templateSource)
     try:
-        output = template(source)
+        output = template(processedSource)
         return output
     except:
         raise Exception("Could not generate definitions")
