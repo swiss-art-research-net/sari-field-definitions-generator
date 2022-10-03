@@ -58,3 +58,4 @@ Available templates are:
 - `generator.RESEARCHSPACE` for ResearchSpace
 - `generator.UNIVERSAL` for both platforms
 - `generator.JSON` for a JSON representation
+- `generator.INLINE` for a Backend Template version
