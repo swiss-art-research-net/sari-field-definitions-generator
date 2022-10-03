@@ -67,7 +67,35 @@
         a mpfield:Field, ldp:Resource, prov:Entity ;
         prov:wasAttributedTo mpuser:admin ;
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
-
+        
+        {{#if treePatterns}}
+            "treePatterns": {
+                "type": "{{ treePatterns.type }}",
+                {{#if treePatterns.rootsQuery}}
+                {{#if treePatterns.rootsQuery}}
+                "rootsQuery": "{{{ treePatterns.rootsQuery }}}",
+                {{/if}}
+                {{#if treePatterns.childrenQuery}}
+                "childrenQuery": "{{{ treePatterns.childrenQuery }}}",
+                {{/if}}
+                {{#if treePatterns.parentsQuery}}
+                "parentsQuery": "{{{ treePatterns.parentsQuery }}}",
+                {{/if}}
+                {{#if treePatterns.searchQuery}}
+                "searchQuery": "{{{ treePatterns.searchQuery }}}"
+                {{/if}}
+                {{/if}}
+                {{#if treePatterns.schemePattern}}
+                {{#if treePatterns.schemePattern}}
+                "schemePattern": "{{{ treePatterns.schemePattern }}}",
+                {{/if}}
+                {{#if treePatterns.relationPattern}}
+                "relationPattern": "{{{ treePatterns.relationPattern }}}"
+                {{/if}}
+                {{/if}}
+            },
+        {{/if}}
+        
         {{#each queries }}
             {{#if autosuggestion}}
                 <{{ ../../prefix }}{{../id}}/query/autosuggestion> a sp:Query;
