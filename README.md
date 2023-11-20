@@ -1,6 +1,8 @@
 # SARI Field Definitions Generator
 
-A generator for Metaphacts/ResearchSpace field definitions
+A generator for Metaphacts/ResearchSpace field definitions.
+
+There is also an improved version of this generator including a CLI available here: https://github.com/robcast/semantic-field-definition-generator
 
 ## Installations
 
